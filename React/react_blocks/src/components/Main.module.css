@@ -1,0 +1,9 @@
+#main {
+    width: 660px;
+    height: 600px;
+    margin: 5px;
+    background-color: #e06666;
+    border: 3px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
