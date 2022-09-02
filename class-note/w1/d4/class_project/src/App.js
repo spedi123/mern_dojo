@@ -1,12 +1,20 @@
 import './App.css';
 
-import flashcardsData from './data/flashcards.json'
+import { Flashcards } from './components/Flashcards';
 
 function App() {
+
   return (
-    <div>
+    <div className="container">
+      <header style= {{textAlign: 'center'}}>
+        <h1>Programming Falsh Cards</h1>
+      </header>      
+      <hr />
       
-    </div>
+      <main>
+          <Flashcards />
+      </main>
+    </div> 
   );
 }
 
