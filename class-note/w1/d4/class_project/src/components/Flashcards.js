@@ -1,13 +1,25 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
+
+import {getTriviaQuestions} from '../services/triviaApiService'
 
 import flashcardsData from '../data/flashcards.json'
-import { AddFlashcard } from './AddFlashcard';
+ import { AddFlashcard } from './AddFlashcard';
 
 import { Flashcard } from './Flashcard'
 
 export const Flashcards = (props) => {
     const [flashcards, setFlashcards] = useState(flashcardsData);
 
+    useEffect(() => {
+      getTriviaQuestions({
+        amount: 10,
+        category: 18,
+        difficulty: 'medium',
+        type: 'boolean',
+      })
+        .then((data) => { console.log(data.results)})
+        .catch((error) => { console.log(error)})
+    },[])
 
     const addNewFlashcards = (newFlashcard) => {
     const updatedFlashcards = [newFlashcard, ...flashcards];
