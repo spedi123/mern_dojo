@@ -1,0 +1,21 @@
+.content {
+    color: red;
+    padding: 10px;
+    margin: 10px;
+    border: solid 3px black;
+}
+
+.select {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+    border: solid 3px black;
+}
+.unselect {
+    background-color: green;
+    color: yellow;
+    padding: 10px;
+    margin: 5px;
+    border: solid 3px black;
+}
