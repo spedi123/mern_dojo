@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import './App.css';
+import Todo from './components/Todo'
 
 function App() {
   const [newTodo, setNewTodo] = useState("")
@@ -56,15 +57,13 @@ function App() {
       {
         todos.map((todo, i) => {
           return (
-            <div key={i}>
-              <span >{todo.text}</span>
-              <input onChange={(event) => {
-                handleToggleComplete(i)
-              }} checked={todo.complete} type="checkbox" />
-              <button onClick={(event) => {
-                handleDelete(i);
-              }}>Delete</button>
-            </div>
+            <Todo
+              key={i} 
+              todo={todo} 
+              handleToggleComplete={handleToggleComplete} 
+              handleDelete={handleDelete}
+              i={i}
+            />
           )
         })
       }
