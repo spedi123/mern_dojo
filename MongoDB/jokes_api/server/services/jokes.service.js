@@ -31,10 +31,23 @@ const updateJokeById = async (id, data) => {
   return joke;
 };
 
+// const getRandomJoke = async () => {
+//   const jokes = await Joke.find();
+//   const joke = jokes[Math.floor(Math.random() * jokes.length)];
+
+//   return joke;
+// }
+
+const getRandomJoke = async () => {
+  const joke = await Joke.aggregate([{ $sample: { size: 2 } }]);
+  return joke;
+}
+
 module.exports = {
   createJoke: createJoke,
   getAllJokes,
   getJokeById,
   deleteJokeById,
   updateJokeById,
+  getRandomJoke,
 };
