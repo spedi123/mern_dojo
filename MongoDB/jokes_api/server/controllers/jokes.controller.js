@@ -4,7 +4,7 @@ const {
     getJokeById,
     deleteJokeById,
     updateJokeById,
-  } = require('../services/Joke.service');
+  } = require('../services/jokes.service');
   
   const handleCreateJoke = async (req, res) => {
     console.log('controller: handleCreateJoke req.body:', req.body);

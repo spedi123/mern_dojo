@@ -6,14 +6,14 @@ const {
   handleGetJokeById,
   handleDeleteJokeById,
   handleUpdateJokeById,
-} = require('../controllers/Joke.controller');
+} = require('../controllers/jokes.controller');
 
 const router = express.Router();
 
-router.post('/api/jokes/new', handleCreateJoke);
-router.get('/api/jokes/:_id', handleGetJokeById);
-router.get('/api/jokes', handleGetAllJokes);
-router.delete('/api/jokes/delete/:_id', handleDeleteJokeById);
-router.put('/api/jokes/update/:_id', handleUpdateJokeById);
+router.post('/new', handleCreateJoke);
+router.get('/:id', handleGetJokeById);
+router.get('/', handleGetAllJokes);
+router.delete('/delete/:id', handleDeleteJokeById);
+router.put('/update/:id', handleUpdateJokeById);
 
 module.exports = { JokeRouter: router };
