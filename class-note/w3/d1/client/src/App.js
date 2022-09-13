@@ -4,7 +4,7 @@ import { Link, Navigate, Route, Routes } from 'react-router-dom'
 import {AllDestinations} from './views/AllDestinations'
 import {EditDestination} from './views/EditDestination'
 import {NewDestination} from './views/NewDestination'
-import {OneDestionation} from './views/OneDestionation'
+import {OneDestination} from './views/OneDestination'
 import {NotFound} from './views/NotFound'
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
         <Route path="/" element={<Navigate to="/destinations" replace />} />
         <Route path="/destinations" element={<AllDestinations />} />
         <Route path="/destinations/:id/edit" element={<EditDestination />} />
-        <Route path="/destinations/:id" element={<OneDestionation />} />
+        <Route path="/destinations/:id" element={<OneDestination />} />
         <Route path="/destinations/new" element={<NewDestination />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

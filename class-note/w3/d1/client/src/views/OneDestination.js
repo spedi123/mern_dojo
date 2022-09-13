@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { getDestinationById } from '../services/internalApiService';
+import { getDestinationsById } from '../services/internalApiService';
 
 export const OneDestination = (props) => {
   const [destination, setDestination] = useState(null);
@@ -9,7 +9,7 @@ export const OneDestination = (props) => {
   const { id } = useParams();
 
   useEffect(() => {
-    getDestinationById(id)
+    getDestinationsById(id)
       .then((data) => {
         console.log(data);
         setDestination(data);
