@@ -1,5 +1,5 @@
 export const NotFound = (props) => {
-
-}
-
-export default NotFound
+    return 'Page not found.';
+  };
+  
+  export default NotFound;
