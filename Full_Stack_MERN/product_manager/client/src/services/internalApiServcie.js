@@ -18,4 +18,14 @@ export const createProduct = async (data) => {
     const res = await http.get(`/products/${id}`);
     return res.data;
   };
+
+  export const updateProductById = async (id, data) => {
+    const res = await http.put(`/products/${id}`, data);
+    return res.data;
+  };
+  
+  export const deleteProductById = async (id) => {
+    const res = await http.delete(`/products/${id}`);
+    return res.data;
+  };
   

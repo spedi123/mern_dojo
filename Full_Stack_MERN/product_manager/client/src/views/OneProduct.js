@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams, Link } from 'react-router-dom';
 
-import {getProductById} from '../services/internalApiServcie';
+import {getProductById, deleteProductById} from '../services/internalApiServcie';
 
 export const OneProduct = (props) => {
     const [product, setProduct] = useState(null);
     const { id } = useParams();
+    const navigate = useNavigate();
 
     useEffect(() => {
         getProductById(id)
@@ -22,13 +23,31 @@ export const OneProduct = (props) => {
         return null;
       }
 
-      const { title, price, description } = product;
+      const handleDeleteClick = () => {
+        deleteProductById(id)
+          .then((deletedProduct) => {
+            navigate('/api/products');
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      };
+
+      const { _id, title, price, description } = product;
 
     return (
         <div style={{textAlign: "center"}}>
             <h2>{ title }</h2>
             <p>Price: ${ price }</p>
             <p>Description: { description }</p>
+            <div>
+              <Link to={`/api/products/${_id}/edit`}>
+                <button>Edit</button>
+              </Link>
+              <button   onClick={(e) => {
+                handleDeleteClick(_id);
+              }} className="btn btn-sm btn-outline-danger mx-1">Delete</button>
+            </div>
         </div>
     );
 }
