@@ -1,7 +1,9 @@
 import {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 import { createProduct } from '../services/internalApiServcie';
 
 const ProductForm = (props) => {
+    const navigate = useNavigate();
 
     const [title, setTitle] = useState("");
     const [ price, setPrice ] = useState("");
@@ -14,16 +16,18 @@ const ProductForm = (props) => {
             price,
             description
         };
+        
         createProduct(newProduct)
             .then((data) => {
-                console.log('new product data:', data);  
+                console.log('new product data:', data);
+                navigate('/')  
             })
             .catch((error) => {
                 console.log(error);
             } )
     }
     return (
-        <div>
+        <div style={{textAlign: "center"}}>
             <form onSubmit={handleSubmit}>
                 <div className="row">
                     <div className="form-block">
