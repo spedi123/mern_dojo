@@ -11,17 +11,17 @@ export const EditAuthor = (props) => {
     const navigate = useNavigate();
 
     const [name, setName] = useState("");
-    const [authorAvailable, setAutorAvailable] = useState(false);
+    const [authorAvailable, setAuthorAvailable] = useState(false);
 
     useEffect(() => {
         getAuthorById(id)
             .then((data) => {
                 setName(data.name)
-                setAutorAvailable(true)
+                setAuthorAvailable(true)
             })
             .catch((error) => {
                 console.log(error);
-                setAutorAvailable(false)
+                setAuthorAvailable(false)
               });
     }, [id]);
 
