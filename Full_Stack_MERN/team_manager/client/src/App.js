@@ -1,23 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+
+import { Link, Navigate, Route, Routes } from 'react-router-dom'
+import AllPlayers from './views/AllPlayers';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{textAlign:"center"}}>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top justify-content-center mb-4">
+        <div className="navbar-nav justify-content-between">
+          <Link
+            to="/players"
+            className="btn btn-sm btn-outline-primary mx-1"
+          >
+            Manage Players
+          </Link>
+          <span> | </span>
+          <Link
+            to="/players/game/1"
+            className="btn btn-sm btn-outline-info mx-1"
+          >
+            Manage Player Status
+          </Link>
+        </div>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Navigate to="/players" replace />}/>
+        <Route path="/players" element={<AllPlayers />}/>
+        <Route />
+        <Route />
+      </Routes>
+
     </div>
   );
 }
