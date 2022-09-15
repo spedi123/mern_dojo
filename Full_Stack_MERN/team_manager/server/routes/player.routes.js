@@ -11,7 +11,6 @@ const {
 const router = express.Router();
 
 router.post('/', handleCreatePlayer);
-router.post('/many', handleCreateManyPlayers);
 router.get('/:id', handleGetPlayerById);
 router.get('/', handleGetAllPlayers);
 router.delete('/:id', handleDeletePlayerById);
