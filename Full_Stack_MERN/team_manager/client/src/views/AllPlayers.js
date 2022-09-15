@@ -18,12 +18,7 @@ export const AllPlayers = (props) => {
     }, [])
 
     const handleDeleteClick = (idToDelete, name) => {
-        console.log(players[0].name); 
-        console.log(idToDelete, name);
-        
         if (window.confirm(`Are you sure you want to remove ${name}`)) {
-           
-            
         deletePlayerById(idToDelete)
           .then((deletedPlayer) => {
             const filteredPlayers = players.filter((player) => {
