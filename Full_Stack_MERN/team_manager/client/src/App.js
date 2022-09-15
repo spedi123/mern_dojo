@@ -2,6 +2,7 @@ import './App.css';
 
 import { Link, Navigate, Route, Routes } from 'react-router-dom'
 import AllPlayers from './views/AllPlayers';
+import NewPlayer from './views/NewPlayer'
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/players" replace />}/>
         <Route path="/players" element={<AllPlayers />}/>
-        <Route />
+        <Route path="/players/new" element={<NewPlayer />}/>
         <Route />
       </Routes>
 
