@@ -3,6 +3,7 @@ import './App.css';
 import { Link, Navigate, Route, Routes } from 'react-router-dom'
 import AllPlayers from './views/AllPlayers';
 import NewPlayer from './views/NewPlayer'
+import ManagePlayers from './views/ManagePlayers';
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
         <Route path="/" element={<Navigate to="/players" replace />}/>
         <Route path="/players" element={<AllPlayers />}/>
         <Route path="/players/new" element={<NewPlayer />}/>
-        <Route />
+        <Route path="/players/game/1" element={<ManagePlayers />}/>
       </Routes>
 
     </div>
